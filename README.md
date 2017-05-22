@@ -50,8 +50,8 @@ The following class markup is required.  A default style is already included wit
 Within the `HTML` markup there are also some requirements. These have to be defined to make the buttons working as desired. Give these values by placing following parameters within the paging `HTML`.
 
 **Required parameters:**
-- Data-page=”{{PrevPage}}”	    `$scope.PrevPage` (If you use the previous page option)
-- Ng-click=”DoPaging($event)”	  Tells `angular` a `button` has been clicked. The `$event` tells which button has been clicked
+- `Data-page=”{{PrevPage}}”`	    **`$scope.PrevPage` (If you use the previous page option)**
+- `Ng-click=”DoPaging($event)”`	  **Tells `angular` a `button` has been clicked. The `$event` tells which button has been clicked**
 
 ## Example
 ```
@@ -73,11 +73,9 @@ Within the `HTML` markup there are also some requirements. These have to be defi
 https://jsfiddle.net/o2pzzc61/3/
 
 ### Notes:
-To hide the pagination if there are no pages to show, you can simply do ng-show=”Pages” or ng-if=”Pages”. $scope.Pages will be an empty object if there are no pages to display.
+To hide the pagination if there are no pages to show, you can simply do `ng-show=”Pages”` or `ng-if=”Pages”`. $scope.Pages will be an empty `object` if there are no pages to display.
 
 ### To do:
-- Give .active class to current page
--	Give support to the data-scope to retrieve data also outside a controller (assigning an object or array directly to the data-scope attribute)
--	Support for pagination server side. Use paging-controller.js for now.
--	Support for single template file. If you want to edit the pagination default. You now have to loop through all files where the template is placed, instead of just having a single file with the paging template.
+- Give `.active` class to current page
+-	Give support to the `data-scope` to retrieve data also outside a controller (assigning an `object` or `array` directly to the `data-scope` attribute)
 -	We’ll see …
