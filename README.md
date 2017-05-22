@@ -13,11 +13,11 @@ You can call the pagination directive by wrapping a <ng-pagination> around you�
 
 There are a few parameters that are required to make the pagination working. You can assign these parameters by placing data attributes.
 
-Required parameters: <ng-pagination data-...””>
+Required parameters: <ng-pagination data-...>
 •	Data-scope=””		The scope which holds the data you want to paginate
 •	Data-controller=””	The that belongs to the data scope
 
-Optional parameters: <ng-pagination data-...””>
+Optional parameters: <ng-pagination data-...>
 •	Data-page-limit=””	How many items per page? Default is 10
 •	Data-pager-buttons=”” How many page buttons to show? Default is 7
 
