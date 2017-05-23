@@ -1,4 +1,61 @@
-         * Throw message in console
+/**
+ * Pagination directive
+ *
+ * @author                      Richard Mauritz
+ * @version                     v1.0.2
+ * @link                        https://github.com/redbullzuiper/ng-pagination
+ */
+ang.directive("ngPagination", function ($location, $timeout) {
+    return {
+        link: function (scope, elem, attrs) {
+            /**
+             * Set global instance of the directive
+             */
+            var self = this;
+            /**
+             * Which scope to watch?
+             */
+            var watch = attrs.scope;
+            /**
+             * Start of with extracting the data from the directive, given as attributes
+             */
+            this.extract = function () {
+
+                scope.$watch(watch, function (newval, oldval) {
+                    if (newval) {
+                        /**
+                         * Controller which holds all data, required
+                         */
+                        self.controller = (attrs.controller ? attrs.controller : false);
+                        /**
+                         * The scope which holds the data to paginate, required
+                         */
+                        self.dataScope = (attrs.scope ? scope[attrs.scope] : false);
+                        /**
+                         * PageLimit, default is 10
+                         */
+                        self.pageLimit = (attrs.pageLimit ? parseInt(attrs.pageLimit) : 10);
+                        /**
+                         * Set fallback to original data
+                         */
+                        self.originalData = self.dataScope;
+                        /**
+                         * How many page buttons to show? Default is 7
+                         */
+                        self.pagerButtons = (attrs.pagerButtons ? parseInt(attrs.pagerButtons) : 3);
+                        /**
+                         * Throw error if required params are missing
+                         */
+                        if (!self.controller) {
+                            /**
+                             * Throw message in console
+                             * Angular throws error when param is missing. After that dies;
+                             */
+                            throw "[data-controller] is missing.";
+                        }
+                        if (!self.dataScope) {
+                            /**
+                             * Throw message in console
                              */
                             throw "[data-scope] is missing.";
                         }
@@ -47,8 +104,6 @@
                  * Whats the last page?
                  */
                 scope.LastPage = parseInt(scope.PagesCount);
-
-                console.log(scope);
             }
 
             /**
