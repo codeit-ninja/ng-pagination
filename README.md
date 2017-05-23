@@ -5,6 +5,9 @@ My first `github` project.
 
 Creates a pagination from an object. As an example. If a object has 1000 items, it will 100 pages from it with 10 items per page.
 
+## Demo
+https://jsfiddle.net/o2pzzc61/5/
+
 ## Instalation
 Requires Angular and jQuery.<br/><br/>
 **Angular cdn**
@@ -45,11 +48,11 @@ All these `$scopes` are available inside the `<ng-pagination>` directive.
 **Classes:**<br/>
 The following class markup is required.  A default style is already included within the style.css. You can find these under the classes:
 
-- div.container
-- ul.paging
-- li (no class required, except for the previous and next page buttons)
-  - button.prevpage
-  - button.nextpage
+- **div.container**
+- **ul.paging**
+- **li** (no class required, except for the previous and next page buttons)
+  - **button.prevpage**
+  - **button.nextpage**
 
 Within the `HTML` markup there are also some requirements. These have to be defined to make the buttons working as desired. Give these values by placing following parameters within the paging `HTML`.
 
@@ -72,9 +75,6 @@ Within the `HTML` markup there are also some requirements. These have to be defi
     </div>
 </ng-pagination>
 ```
-
-## Demo
-https://jsfiddle.net/o2pzzc61/5/
 
 ### Notes:
 To hide the pagination if there are no pages to show, you can simply do `ng-show=”Pages”` or `ng-if=”Pages”`. `$scope.Pages` will be an empty `object` if there are no pages to display.
