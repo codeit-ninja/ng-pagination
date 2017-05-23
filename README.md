@@ -1,9 +1,11 @@
 ## ng-pagination
 My first `github` project.
 
+#### Angular pagination directive.
+
 ![Pagination directive](http://i.imgur.com/AQDVI4F.jpg)
 
-Creates a pagination from an object. As an example. If a object has 1000 items, it will 100 pages from it with 10 items per page.
+Creates a pagination from an object. As an example. If an object has 1000 items, it will create 100 pages from it with 10 items per page.
 
 ## Demo
 https://jsfiddle.net/o2pzzc61/5/
