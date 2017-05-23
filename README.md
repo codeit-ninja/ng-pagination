@@ -10,7 +10,7 @@ Creates a pagination from an object. As an example. If an object has 1000 items,
 ## Demo
 https://jsfiddle.net/o2pzzc61/5/
 
-## Instalation
+## Installation
 Requires Angular and jQuery.<br/><br/>
 **Angular cdn**
 ```
