@@ -1,6 +1,8 @@
 ## ng-pagination
 My first `github` project.
 
+![Pagination directive](http://i.imgur.com/AQDVI4F.jpg)
+
 Creates a pagination from an object. As an example. If a object has 1000 items, it will 100 pages from it with 10 items per page.
 
 ## Instalation
@@ -25,7 +27,7 @@ There are a few parameters that are required to make the pagination working. You
 
 **Optional parameters: `ng-pagination data-...””>`**
 - `Data-page-limit=””` - **How many items per page? Default is 10**
-- `Data-pager-buttons=””` - **How many page buttons to show? Default is 7**
+- `Data-pager-buttons=””` - **How many page buttons to show? Default is 7 The active page will stay in the middle**
 
 **The following `$scopes` are available to use.**
 - `$scope.Pages` - **Amount of pages**
@@ -33,12 +35,14 @@ There are a few parameters that are required to make the pagination working. You
 - `$scope.PrevPage` - **The previous page**
 - `$scope.CurrentPage` - **The current page**
 - `$scope.NextPage` - **The next page**
+- `$scope.FirstPage` - **The first page**
+- `$scope.LastPage` - **The last page**
 - `$scope.Page` - **Array of pages, use with ng-repeat**
 - `$scope.FallBackData` - **No real use, just the original dataset**
 
 All these `$scopes` are available inside the `<ng-pagination>` directive.
 
-**Classes**<br/>
+**Classes:**<br/>
 The following class markup is required.  A default style is already included within the style.css. You can find these under the classes:
 
 - div.container
@@ -55,27 +59,26 @@ Within the `HTML` markup there are also some requirements. These have to be defi
 
 ## Example
 ```
-<ng-pagination data-controller="FailureController" data-scope="allData" data-page-limit="15" data-pager-buttons="7">
+<ng-pagination data-controller="TestController" data-scope="TestData" data-page-limit="5" data-pager-buttons="7">
     <div ng-repeat="fault in PagedData">
         <div class="col-md-12">{{fault.Item}}</div>
     </div>
     <div class="paging-container">
         <ul class="paging">
             <li><button class="prevpage" data-page="{{PrevPage}}" ng-click="DoPaging($event)"><i class="fa fa-caret-left" aria-hidden="true"></i></button></li>
-            <li ng-repeat="page in Pages"><button data-page="{{Page}}" ng-click="DoPaging($event)">{{page}}</button></li>
+            <li ng-repeat="Page in Pages"><button data-page="{{Page}}" ng-click="DoPaging($event)">{{Page}}</button></li>
             <li><button class="nextpage" data-page="{{NextPage}}" ng-click="DoPaging($event)"><i class="fa fa-caret-right" aria-hidden="true"></i></button></li>
         </ul>
     </div>
 </ng-pagination>
 ```
 
-## Demo (slightly differs from source code)
-https://jsfiddle.net/o2pzzc61/3/
+## Demo
+https://jsfiddle.net/o2pzzc61/5/
 
 ### Notes:
-To hide the pagination if there are no pages to show, you can simply do `ng-show=”Pages”` or `ng-if=”Pages”`. $scope.Pages will be an empty `object` if there are no pages to display.
+To hide the pagination if there are no pages to show, you can simply do `ng-show=”Pages”` or `ng-if=”Pages”`. `$scope.Pages` will be an empty `object` if there are no pages to display.
 
 ### To do:
-- Give `.active` class to current page
 -	Give support to the `data-scope` to retrieve data also outside a controller (assigning an `object` or `array` directly to the `data-scope` attribute)
 -	We’ll see …
