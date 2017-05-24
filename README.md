@@ -35,14 +35,13 @@ There are a few parameters that are required to make the pagination working. You
 - `Data-pager-buttons=””` - **How many page buttons to show? Default is 7 The active page will stay in the middle**
 
 **The following `$scopes` are available to use.**
-- `$scope.Pages` - **Amount of pages**
+- `$scope.Pages` - **Array of pages, use with ng-repeat**
 - `$scope.PagedData` - **Use this inside the ng-repeat, holds paged data**
 - `$scope.PrevPage` - **The previous page**
 - `$scope.CurrentPage` - **The current page**
 - `$scope.NextPage` - **The next page**
 - `$scope.FirstPage` - **The first page**
 - `$scope.LastPage` - **The last page**
-- `$scope.Page` - **Array of pages, use with ng-repeat**
 - `$scope.FallBackData` - **No real use, just the original dataset**
 
 All these `$scopes` are available inside the `<ng-pagination>` directive.
